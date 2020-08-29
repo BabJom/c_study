@@ -83,6 +83,7 @@ void multiple(char **str, int argc)
       write(1, " <==\n", 5);
       write(1, buf, n);
     }
+    close(fd);
     i++;
   }
 }
@@ -113,6 +114,7 @@ int main(int argc, char *argv[]) {
     }
     if(read(fd, buf, n) > 0)
       write(1, buf, n);
+    close(fd);
   }
   else
     multiple(argv, argc);
